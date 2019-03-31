@@ -22,6 +22,7 @@
     <ProjectGuid>{C19FF496-60DA-477C-BDD7-A7E6A7E3B83E}</ProjectGuid>
     <RootNamespace>Vermintide2</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>StingrayEngine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -44,7 +45,7 @@
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -110,6 +111,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="interfaces.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="engine\application.h" />
+    <ClInclude Include="engine\component.h" />
+    <ClInclude Include="engine\luaenvironment.h" />
+    <ClInclude Include="engine\renderinterface.h" />
+    <ClInclude Include="engine\unit.h" />
+    <ClInclude Include="engine\world.h" />
+    <ClInclude Include="interfaces.h" />
+    <ClInclude Include="stingray.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
