@@ -2,9 +2,10 @@
 
 bool Interfaces::Init()
 {
-	// application = 4C 8B F1 48 8B 05 ? ? ? ? 
-
-	return true;
+	printf("Base: 0x%p\n", Memory::GetModuleBaseAddress("vermintide2.exe"));
+	application = *(Application**)(0x7FF6F7766CE0); // Static for testing
+	printf("Application: 0x%p\n", application);
+	return application != nullptr;
 }
 
 Interfaces interfaces;

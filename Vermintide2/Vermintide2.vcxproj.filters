@@ -16,12 +16,18 @@
     <Filter Include="Header Files\engine">
       <UniqueIdentifier>{ba9d57e0-a5ce-4e60-9cfb-9ea671dc1854}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\lua">
+      <UniqueIdentifier>{9628f079-22ce-48b8-af18-757fb018248a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="interfaces.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -49,6 +55,27 @@
     </ClInclude>
     <ClInclude Include="engine\renderinterface.h">
       <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="memory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lauxlib.h">
+      <Filter>Resource Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.h">
+      <Filter>Resource Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\luaconf.h">
+      <Filter>Resource Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lualib.h">
+      <Filter>Resource Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\level.h">
+      <Filter>Header Files\engine</Filter>
+    </ClInclude>
+    <ClInclude Include="lua\lua.hpp">
+      <Filter>Resource Files\lua</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -20,4 +20,9 @@ public:
 	float time_since_launch; //0x0294
 	char pad_0298[16]; //0x0298
 	Array<World*> _worlds; //0x02A8
+
+	World* GetMainWorld()
+	{
+		return _worlds.Get(3);
+	}
 }; //Size: 0x02A8

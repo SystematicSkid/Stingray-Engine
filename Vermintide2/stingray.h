@@ -7,11 +7,8 @@
 #include <comdef.h>
 #include <minwindef.h>
 #include <winbase.h>
-#include <intrin.h>
+#include <intrin.h>	
 #include <psapi.h>
-
-#pragma comment(lib, "d3d11.lib")
-#pragma comment(lib, "d3dx10.lib")
 
 // stl
 #include <vector>
@@ -26,6 +23,9 @@
 
 #define PTR_MAX_VALUE ((PVOID)0x000F000000000000)
 _forceinline bool IsValidPtr(PVOID p) { return (p >= (PVOID)0x10000) && (p < PTR_MAX_VALUE); }
+
+// util
+#include "memory.h"
 
 // sdk
 template <class T>
@@ -42,8 +42,14 @@ struct Array
 	}
 };
 
+
+
+#include "lua/lua.hpp"
+#pragma comment(lib, "Lua51.lib")
+
 #include "engine/unit.h"
 #include "engine/luaenvironment.h"
+#include "engine/level.h"
 #include "engine/world.h"
 #include "engine/renderinterface.h"
 #include "engine/application.h"
