@@ -56,6 +56,7 @@ struct Array
 #include "Engine/world.h"
 #include "Engine/renderinterface.h"
 #include "Engine/application.h"
+#include "Engine/PluginInterface/internal.h"
 
 
 // core

@@ -22,6 +22,9 @@
     <Filter Include="Header Files\Engine\Utility">
       <UniqueIdentifier>{19e14eb9-e212-4335-a058-efd6de1cf718}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\PluginInterface">
+      <UniqueIdentifier>{012d1551-482f-4173-9f28-77754f5218a2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -85,6 +88,9 @@
     </ClInclude>
     <ClInclude Include="Engine\shadingenvironment.h">
       <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\PluginInterface\internal.h">
+      <Filter>Header Files\Engine\PluginInterface</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
