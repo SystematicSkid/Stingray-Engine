@@ -126,7 +126,9 @@
     <ClInclude Include="engine\level.h" />
     <ClInclude Include="engine\luaenvironment.h" />
     <ClInclude Include="engine\renderinterface.h" />
+    <ClInclude Include="Engine\shadingenvironment.h" />
     <ClInclude Include="engine\unit.h" />
+    <ClInclude Include="Engine\Utility\IdString64.h" />
     <ClInclude Include="engine\world.h" />
     <ClInclude Include="interfaces.h" />
     <ClInclude Include="lua\lauxlib.h" />

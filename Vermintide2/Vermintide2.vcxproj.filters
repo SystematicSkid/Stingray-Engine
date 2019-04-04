@@ -13,11 +13,14 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Header Files\engine">
-      <UniqueIdentifier>{ba9d57e0-a5ce-4e60-9cfb-9ea671dc1854}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\lua">
       <UniqueIdentifier>{9628f079-22ce-48b8-af18-757fb018248a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine">
+      <UniqueIdentifier>{ba9d57e0-a5ce-4e60-9cfb-9ea671dc1854}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Engine\Utility">
+      <UniqueIdentifier>{19e14eb9-e212-4335-a058-efd6de1cf718}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -39,22 +42,22 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\application.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\world.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\luaenvironment.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\component.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\unit.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\renderinterface.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="memory.h">
       <Filter>Header Files</Filter>
@@ -72,10 +75,16 @@
       <Filter>Resource Files\lua</Filter>
     </ClInclude>
     <ClInclude Include="engine\level.h">
-      <Filter>Header Files\engine</Filter>
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="lua\lua.hpp">
       <Filter>Resource Files\lua</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Utility\IdString64.h">
+      <Filter>Header Files\Engine\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\shadingenvironment.h">
+      <Filter>Header Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

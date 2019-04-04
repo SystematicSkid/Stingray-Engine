@@ -21,8 +21,103 @@ public:
 	char pad_0298[16]; //0x0298
 	Array<World*> _worlds; //0x02A8
 
-	World* GetMainWorld()
+	World* get_main_world()
 	{
 		return _worlds.Get(3);
 	}
+
+	void apply_user_settings()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("4C 8B DC 41 57 48 81 EC ? ? ? ? 48 8B 81 ? ? ? ?", "Vermintide2.exe"));
+		function(this);
+	}
+
+	bool autoload()
+	{
+		using type = bool(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 33 DB 84 C0 0F 85 ? ? ? ?", "Vermintide2.exe") + 1);
+		return function(this);
+	}
+
+	static std::string build_identifier()
+	{
+		return "8462f992ef28";
+	}
+
+	static std::string product_version()
+	{
+		return "Developer Build (1.3.0.0)";
+	}
+
+	void setup_renderer()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 33 C9 E8 ? ? ? ? 41 B9 ? ? ? ? 4C 8D 05 ? ? ? ?", "Vermintide2.exe") + 1);
+		function(this);
+	}
+
+	void setup_input()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("40 53 48 83 EC 50 48 8B 41 40", "Vermintide2.exe"));
+		function(this);
+	}
+
+	void config_renderer()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("40 55 53 56 57 41 57 48 8B EC", "Vermintide2.exe"));
+		function(this);
+	}
+
+	void setup_physics()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 4C 24 ? 55 53 56 57 41 56 41 57 48 8B EC", "Vermintide2.exe"));
+		function(this);
+	}
+	
+	void setup_boot_packages()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("40 53 56 48 83 EC 48", "Vermintide2.exe"));
+		function(this);
+	}
+	
+	void setup_physics_properties()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("41 56 48 83 EC 30 48 89 5C 24 ? 4C 8B F1 48 89 6C 24 ? 48 89 74 24 ?", "Vermintide2.exe"));
+		function(this);
+	}
+	
+	void setup_network()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 6C 24 ? 56 48 83 EC 30 48 8B 41 40", "Vermintide2.exe"));
+		function(this);
+	}
+	
+	void setup_entities()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 5C 24 ? 48 89 6C 24 ? 48 89 74 24 ? 57 48 83 EC 30 48 8B F9 48 8D 54 24 ?", "Vermintide2.exe"));
+		function(this);
+	}
+
+	void release_world(World* world)
+	{
+		using type = void(__thiscall*)(Application*, World*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 74 24 ? 57 48 83 EC 20 48 89 5C 24 ? 48 8B FA", "Vermintide2.exe"));
+		function(this, world);
+	}
+
+	bool rendering_enabled()
+	{
+		RenderInterface* pRender = this->_render;
+		return *reinterpret_cast<bool*>(pRender + 0x2BF);
+	}
+
+	void set_rendering_enabled(bool b)
+	{
+		RenderInterface* pRender = this->_render;
+		*reinterpret_cast<bool*>(pRender + 0x2BF) = b;
+	}
+
+	bool update()
+	{
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 84 C0 75 F4", "Vermintide2.exe") + 1);
+		function(this);
+	}
+
 }; //Size: 0x02A8

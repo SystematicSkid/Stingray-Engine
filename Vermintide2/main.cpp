@@ -10,9 +10,9 @@ void Init()
 	if (!interfaces.Init())
 		MessageBoxA(NULL, "Interfaces: Failed to init!", NULL, NULL);
 	printf("World: 0x%p\n", interfaces.application);
-	if(IsValidPtr(interfaces.application->GetMainWorld()))
+	if(IsValidPtr(interfaces.application->get_main_world()))
 	{
-		World* world = interfaces.application->GetMainWorld();
+		World* world = interfaces.application->get_main_world();
 		
 		if (IsValidPtr(world->_script_environment))
 		{

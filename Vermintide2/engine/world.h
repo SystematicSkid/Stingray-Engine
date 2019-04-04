@@ -19,4 +19,12 @@ public:
 	char pad_0798[8]; //0x0798
 	class PhysicsWorld* _physics_world; //0x07A0
 	int32_t _update_count; //0x07A8
+
+	ShadingEnvironment* create_shading_environment(IdString64 *name)
+	{
+		using type = ShadingEnvironment*(__thiscall*)(World*, IdString64*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 48 83 C4 50 41 5F C3", "Vermintide2.exe"));
+		return function(this, name);
+	}
+
+
 }; //Size: 0x7A8

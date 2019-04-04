@@ -47,12 +47,15 @@ struct Array
 #include "lua/lua.hpp"
 #pragma comment(lib, "Lua51.lib")
 
-#include "engine/unit.h"
-#include "engine/luaenvironment.h"
-#include "engine/level.h"
-#include "engine/world.h"
-#include "engine/renderinterface.h"
-#include "engine/application.h"
+#include "Engine/Utility/IdString64.h"
+
+#include "Engine/unit.h"
+#include "Engine/luaenvironment.h"
+#include "Engine/level.h"
+#include "Engine/shadingenvironment.h"
+#include "Engine/world.h"
+#include "Engine/renderinterface.h"
+#include "Engine/application.h"
 
 
 // core
