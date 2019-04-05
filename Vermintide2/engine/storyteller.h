@@ -28,5 +28,10 @@ public:
 	{
 		return (*(bool(__fastcall **)(Storyteller*, int))(*(uintptr_t*)this + 64))(this, id);
 	}
+
+	float length(int id)
+	{
+		return (*(float(__fastcall **)(Storyteller*, int))(*(uintptr_t*)this + 88))(this, id);
+	}
 	
 };
