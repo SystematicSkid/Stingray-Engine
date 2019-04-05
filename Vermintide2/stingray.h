@@ -57,6 +57,7 @@ struct Array
 #include "Engine/renderinterface.h"
 #include "Engine/application.h"
 #include "Engine/PluginInterface/internal.h"
+#include "Engine/Network/gamesession.h"
 
 
 // core

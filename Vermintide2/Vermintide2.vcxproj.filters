@@ -25,6 +25,9 @@
     <Filter Include="Header Files\Engine\PluginInterface">
       <UniqueIdentifier>{012d1551-482f-4173-9f28-77754f5218a2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Network">
+      <UniqueIdentifier>{66575733-a4aa-4868-9885-3c1f852f77e0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -91,6 +94,12 @@
     </ClInclude>
     <ClInclude Include="Engine\PluginInterface\internal.h">
       <Filter>Header Files\Engine\PluginInterface</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\scattersystem.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Network\gamesession.h">
+      <Filter>Header Files\Engine\Network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
