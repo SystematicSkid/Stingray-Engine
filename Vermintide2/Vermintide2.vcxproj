@@ -126,10 +126,12 @@
     <ClInclude Include="engine\level.h" />
     <ClInclude Include="engine\luaenvironment.h" />
     <ClInclude Include="Engine\Network\gamesession.h" />
+    <ClInclude Include="Engine\Network\network.h" />
     <ClInclude Include="Engine\PluginInterface\internal.h" />
     <ClInclude Include="engine\renderinterface.h" />
     <ClInclude Include="Engine\scattersystem.h" />
     <ClInclude Include="Engine\shadingenvironment.h" />
+    <ClInclude Include="Engine\storyteller.h" />
     <ClInclude Include="engine\unit.h" />
     <ClInclude Include="Engine\Utility\IdString64.h" />
     <ClInclude Include="engine\world.h" />

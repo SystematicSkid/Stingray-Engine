@@ -101,5 +101,11 @@
     <ClInclude Include="Engine\Network\gamesession.h">
       <Filter>Header Files\Engine\Network</Filter>
     </ClInclude>
+    <ClInclude Include="Engine\Network\network.h">
+      <Filter>Header Files\Engine\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\storyteller.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

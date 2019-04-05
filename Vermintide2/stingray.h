@@ -53,11 +53,15 @@ struct Array
 #include "Engine/luaenvironment.h"
 #include "Engine/level.h"
 #include "Engine/shadingenvironment.h"
+#include "Engine/storyteller.h"
 #include "Engine/world.h"
 #include "Engine/renderinterface.h"
 #include "Engine/application.h"
+
 #include "Engine/PluginInterface/internal.h"
+
 #include "Engine/Network/gamesession.h"
+#include "Engine/Network/network.h"
 
 
 // core
