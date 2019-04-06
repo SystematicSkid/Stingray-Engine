@@ -95,4 +95,14 @@ public:
 		function(this, state);
 	}
 
+	__int32 id32()
+	{
+		return (__int32)(signed int)(*(uintptr_t *)(this + 0x240) >> 32);
+	}
+
+	int id()
+	{
+		return *(__int32*)(this + 0x268);
+	}
+
 }; //Size: 0x05B8

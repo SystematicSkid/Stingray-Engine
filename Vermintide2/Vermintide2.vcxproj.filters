@@ -28,6 +28,9 @@
     <Filter Include="Header Files\Engine\Network">
       <UniqueIdentifier>{66575733-a4aa-4868-9885-3c1f852f77e0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Engine\Physics">
+      <UniqueIdentifier>{e1cad2f1-d75b-4df3-8560-b355a69ab4ec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -48,9 +51,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="engine\application.h">
-      <Filter>Header Files\Engine</Filter>
-    </ClInclude>
-    <ClInclude Include="engine\world.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
     <ClInclude Include="engine\luaenvironment.h">
@@ -105,6 +105,18 @@
       <Filter>Header Files\Engine\Network</Filter>
     </ClInclude>
     <ClInclude Include="Engine\storyteller.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Network\unitsynchronizer.h">
+      <Filter>Header Files\Engine\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\Physics\actor.h">
+      <Filter>Header Files\Engine\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine\vector.h">
+      <Filter>Header Files\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\world.h">
       <Filter>Header Files\Engine</Filter>
     </ClInclude>
   </ItemGroup>

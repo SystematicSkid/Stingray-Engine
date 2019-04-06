@@ -68,7 +68,7 @@ public:
 
 	void setup_physics()
 	{
-		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 4C 24 ? 55 53 56 57 41 56 41 57 48 8B EC", "Vermintide2.exe"));
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(dwImageBase + 0x2C120); // 48 89 4C 24 ? 55 53 56 57 41 56 41 57 48 8B EC
 		function(this);
 	}
 	
@@ -86,7 +86,7 @@ public:
 	
 	void setup_network()
 	{
-		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("48 89 6C 24 ? 56 48 83 EC 30 48 8B 41 40", "Vermintide2.exe"));
+		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(dwImageBase + 0x2CF70); // 48 89 6C 24 ? 56 48 83 EC 30 48 8B 41 40
 		function(this);
 	}
 	
@@ -116,8 +116,8 @@ public:
 
 	bool update()
 	{
-		using type = void(__thiscall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 84 C0 75 F4", "Vermintide2.exe") + 1);
-		function(this);
+		using type = bool(__fastcall*)(Application*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 84 C0 75 F4", "Vermintide2.exe") + 1);
+		return function(this);
 	}
 
 }; //Size: 0x02A8

@@ -127,6 +127,8 @@
     <ClInclude Include="engine\luaenvironment.h" />
     <ClInclude Include="Engine\Network\gamesession.h" />
     <ClInclude Include="Engine\Network\network.h" />
+    <ClInclude Include="Engine\Network\unitsynchronizer.h" />
+    <ClInclude Include="Engine\Physics\actor.h" />
     <ClInclude Include="Engine\PluginInterface\internal.h" />
     <ClInclude Include="engine\renderinterface.h" />
     <ClInclude Include="Engine\scattersystem.h" />
@@ -134,6 +136,7 @@
     <ClInclude Include="Engine\storyteller.h" />
     <ClInclude Include="engine\unit.h" />
     <ClInclude Include="Engine\Utility\IdString64.h" />
+    <ClInclude Include="Engine\vector.h" />
     <ClInclude Include="engine\world.h" />
     <ClInclude Include="interfaces.h" />
     <ClInclude Include="lua\lauxlib.h" />

@@ -25,6 +25,4 @@ public:
 		using type = ShadingEnvironment*(__thiscall*)(World*, IdString64*); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? 48 83 C4 50 41 5F C3", "Vermintide2.exe"));
 		return function(this, name);
 	}
-
-
 }; //Size: 0x7A8

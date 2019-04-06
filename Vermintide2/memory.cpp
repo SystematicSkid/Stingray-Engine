@@ -87,3 +87,28 @@ ptr Memory::SigScan(const char* pattern, const char* module)
 
 	return NULL;
 }
+
+template< typename Ty > Ty make_ptr(void* ptr, DWORD_PTR offset)
+{
+	return reinterpret_cast<Ty>(reinterpret_cast<DWORD_PTR> (ptr) + offset);
+}
+
+PIMAGE_NT_HEADERS Memory::GetNTHeader(HMODULE hmModule)
+{
+	if (hmModule == nullptr)
+		return nullptr;
+
+	auto pDosHeader = reinterpret_cast<IMAGE_DOS_HEADER*>(hmModule);
+
+	if (pDosHeader->e_magic != IMAGE_DOS_SIGNATURE)
+		return nullptr;
+
+	auto pNtHeader = make_ptr< PIMAGE_NT_HEADERS >(hmModule, pDosHeader->e_lfanew);
+
+	if (pNtHeader->Signature != IMAGE_NT_SIGNATURE)
+		return nullptr;
+
+	return pNtHeader;
+}
+
+

@@ -24,8 +24,12 @@
 #define PTR_MAX_VALUE ((PVOID)0x000F000000000000)
 _forceinline bool IsValidPtr(PVOID p) { return (p >= (PVOID)0x10000) && (p < PTR_MAX_VALUE); }
 
+extern DWORD64 dwImageSize;
+extern DWORD64 dwImageBase;
+
 // util
 #include "memory.h"
+#include "Engine/vector.h"
 
 // sdk
 template <class T>
@@ -47,7 +51,10 @@ struct Array
 #include "lua/lua.hpp"
 #pragma comment(lib, "Lua51.lib")
 
+
 #include "Engine/Utility/IdString64.h"
+
+#include "Engine/Physics/actor.h"
 
 #include "Engine/unit.h"
 #include "Engine/luaenvironment.h"
@@ -60,6 +67,7 @@ struct Array
 
 #include "Engine/PluginInterface/internal.h"
 
+#include "Engine/Network/unitsynchronizer.h"
 #include "Engine/Network/gamesession.h"
 #include "Engine/Network/network.h"
 
