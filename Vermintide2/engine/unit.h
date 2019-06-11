@@ -15,17 +15,30 @@ public:
 	int32_t _moving_until; //0x023C
 
 
+/// <summary>
+/// The debug name.
+/// </summary>
+/// <returns>The debug name</returns>
 	const char* debug_name()
 	{
 		IdString64 id = *reinterpret_cast<IdString64*>(this->pResource + 0x48);
 		return IdString64::lookup_safe(&id);
 	}
 
+	/// <summary>
+	/// Check if unit is alive.
+	/// </summary>
+	/// <returns></returns>
 	bool alive()
 	{
 		return *reinterpret_cast<bool*>(this + 0x3F9) == 0;
 	}
 
+	/// <summary>
+	/// Set object to frozen.
+	/// </summary>
+	/// <param name="b">if set to <c>true</c> [b].</param>
+	/// <returns></returns>
 	int set_frozen(bool b)
 	{
 		*reinterpret_cast<bool*>(this + 0x3F9) = b;
@@ -34,15 +47,22 @@ public:
 		return function(*reinterpret_cast<uintptr_t**>(world + 0x770), *reinterpret_cast<uintptr_t**>(this + 0x40));
 	}
 
+	/// <summary>
+	/// Determines whether this instance is frozen.
+	/// </summary>
+	/// <returns>
+	///   <c>true</c> if this instance is frozen; otherwise, <c>false</c>.
+	/// </returns>
 	bool is_frozen()
 	{
 		return *reinterpret_cast<bool*>(this + 0x3F9);
 	}
 
-	/**
-	 * \brief 
-	 * \return true if succeed 
-	 */
+
+	/// <summary>
+	/// Disables the physics.
+	/// </summary>
+	/// <returns></returns>
 	bool disable_physics()
 	{
 		uintptr_t* world = *reinterpret_cast<uintptr_t**>(this + 0x10);
@@ -53,10 +73,10 @@ public:
 		return true;
 	}
 
-	/**
-	 * \brief 
-	 * \return true if succeed 
-	 */
+	/// <summary>
+	/// Enables the physics.
+	/// </summary>
+	/// <returns></returns>
 	bool enable_physics()
 	{
 		uintptr_t* world = *reinterpret_cast<uintptr_t**>(this + 0x10);
@@ -71,6 +91,9 @@ public:
 		return false;
 	}
 
+	/// <summary>
+	/// Enables the proximity unit.
+	/// </summary>
 	void enable_proximity_unit()
 	{
 		uintptr_t* world = *reinterpret_cast<uintptr_t**>(this + 0x10);
@@ -83,23 +106,40 @@ public:
 		}
 	}
 
+	/// <summary>
+	/// Sets the visibilty.
+	/// </summary>
+	/// <param name="group">The ID group.</param>
+	/// <param name="state">if set to <c>true</c> [state].</param>
 	void set_visibilty(IdString64 group, bool state)
 	{
 		using type = void(__fastcall*)(Unit*, IdString64, bool); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? EB 0B 45 85 C9", "Vermintide2.exe") + 1);
 		function(this, group, state);
 	}
 
+	/// <summary>
+	/// Sets the unit visibility.
+	/// </summary>
+	/// <param name="state">if set to <c>true</c> [state].</param>
 	void set_unit_visibility(bool state)
 	{
 		using type = void(__fastcall*)(Unit*, bool); static type function = reinterpret_cast<type>(Memory::SigScan("E8 ? ? ? ? B8 ? ? ? ? 4C 8D 44 24 ?", "Vermintide2.exe") + 1);
 		function(this, state);
 	}
 
+	/// <summary>
+	/// Gets the 32-bit ID.
+	/// </summary>
+	/// <returns></returns>
 	__int32 id32()
 	{
 		return (__int32)(signed int)(*(uintptr_t *)(this + 0x240) >> 32);
 	}
 
+	/// <summary>
+	/// Gets the 64-bit ID.
+	/// </summary>
+	/// <returns></returns>
 	int id()
 	{
 		return *(__int32*)(this + 0x268);

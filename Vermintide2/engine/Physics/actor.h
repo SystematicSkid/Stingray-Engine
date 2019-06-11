@@ -4,18 +4,32 @@ class Actor
 {
 public:
 
+	/// <summary>
+	/// Determines whether PhysX collision is enabled.
+	/// </summary>
+	/// <returns>
+	///   <c>true</c> if [is collision enabled]; otherwise, <c>false</c>.
+	/// </returns>
 	bool is_collision_enabled()
 	{
 		return *reinterpret_cast<bool*>(this + 0x90);
 	}
 
-	
-
+	/// <summary>
+	/// Sets if the PhysX collision is enabled.
+	/// </summary>
+	/// <param name="b">if set to <c>true</c> [b].</param>
 	void set_collision_enabled_internal(bool b)
 	{
 		*reinterpret_cast<bool*>(this + 0x90) = b;
 	}
 
+	/// <summary>
+	/// Determines whether this object will be updated.
+	/// </summary>
+	/// <returns>
+	///   <c>true</c> if [is update enabled]; otherwise, <c>false</c>.
+	/// </returns>
 	bool is_update_enabled()
 	{
 		return *reinterpret_cast<bool*>(this + 0x93);
@@ -32,6 +46,12 @@ public:
 		function(this, b);
 	}
 
+	/// <summary>
+	/// Determines whether gravity is enabled.
+	/// </summary>
+	/// <returns>
+	///   <c>true</c> if [is gravity enabled]; otherwise, <c>false</c>.
+	/// </returns>
 	bool is_gravity_enabled()
 	{
 		char v3;

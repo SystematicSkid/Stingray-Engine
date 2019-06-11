@@ -21,6 +21,7 @@
 #include <algorithm>
 #include <sstream>
 
+// Credit: Syc0re
 #define PTR_MAX_VALUE ((PVOID)0x000F000000000000)
 _forceinline bool IsValidPtr(PVOID p) { return (p >= (PVOID)0x10000) && (p < PTR_MAX_VALUE); }
 

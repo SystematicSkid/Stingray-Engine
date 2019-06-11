@@ -3,7 +3,30 @@
 DWORD64 dwImageSize = NULL;
 DWORD64 dwImageBase = NULL;
 
-void Init()
+using luaL_loadstring_t = int(__fastcall*)(lua_State* L, const char* s);
+luaL_loadstring_t env_loadstring;
+using luaL_pcall_t = int(__fastcall*)(lua_State* L, int nargs, int nresults, int errfunc);
+luaL_pcall_t env_pcall;
+
+
+/// <summary>
+/// Sends a lua command to the state, prints results.
+/// </summary>
+/// <param name="L">The lua state.</param>
+/// <param name="s">The command.</param>
+/// <returns></returns>
+int command(lua_State* L, const char* s)
+{
+	HMODULE lua51 = GetModuleHandleA("lua51.dll");
+	env_loadstring = reinterpret_cast<luaL_loadstring_t>(GetProcAddress(lua51, "luaL_loadstring"));
+	env_pcall = reinterpret_cast<luaL_pcall_t>(GetProcAddress(lua51, "lua_pcall"));
+
+	printf("%i\n%i\n", env_loadstring(L, s), env_pcall(L, 0, -1, 0));
+
+	return 0;
+}
+
+void __RPC_CALLEE __RPC_CALLEE Init()
 {
 	AllocConsole();
 	freopen("CONIN$", "r", stdin);
@@ -17,10 +40,8 @@ void Init()
 	printf("Network: 0x%p\n", interfaces.network);
 	printf("World: 0x%p\n", interfaces.application->get_main_world());
 
-	while(true)
-	{
-		interfaces.application->setup_network();
-	}
+	int ret = command(interfaces.application->get_main_world()->_script_environment->_state, "print('test')");
+	printf("Ret: %i\n", ret);
 
 }
 

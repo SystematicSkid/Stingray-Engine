@@ -1,5 +1,11 @@
 #include "stingray.h"
 
+/// <summary>
+/// Gets the module base address.
+/// Credits: Syc0re
+/// </summary>
+/// <param name="modulename">The modulename.</param>
+/// <returns></returns>
 HMODULE __stdcall Memory::GetModuleBaseAddress(std::string modulename)
 {
 	PEB* peb = nullptr;
@@ -27,6 +33,11 @@ HMODULE __stdcall Memory::GetModuleBaseAddress(std::string modulename)
 	return nullptr;
 }
 
+/// <summary>
+/// Converts Hexadecimals to bytes.
+/// </summary>
+/// <param name="hex">The hexadecimal.</param>
+/// <returns></returns>
 std::string Memory::HexToBytes(std::string hex)
 {
 	std::string bytes;
@@ -50,6 +61,12 @@ std::string Memory::HexToBytes(std::string hex)
 	return bytes;
 }
 
+/// <summary>
+/// Scans module for byte pattern
+/// </summary>
+/// <param name="pattern">The pattern.</param>
+/// <param name="module">The module.</param>
+/// <returns></returns>
 ptr Memory::SigScan(const char* pattern, const char* module)
 {
 	HMODULE mod = GetModuleHandle(module);
@@ -93,6 +110,12 @@ template< typename Ty > Ty make_ptr(void* ptr, DWORD_PTR offset)
 	return reinterpret_cast<Ty>(reinterpret_cast<DWORD_PTR> (ptr) + offset);
 }
 
+/// <summary>
+/// Gets the nt header.
+/// Credit: Syc0re
+/// </summary>
+/// <param name="hmModule">The hm module.</param>
+/// <returns></returns>
 PIMAGE_NT_HEADERS Memory::GetNTHeader(HMODULE hmModule)
 {
 	if (hmModule == nullptr)

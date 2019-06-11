@@ -1,6 +1,6 @@
 #pragma once
 
-class ShadingEnvironment
+class ShadingEnvironment // TODO
 {
 public:
 
